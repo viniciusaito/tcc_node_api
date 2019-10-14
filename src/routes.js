@@ -1,12 +1,12 @@
 const express = require('express')
 const routes = express.Router()
 
-const UserController = require('./controllers/UserController')
+const AdministratorController = require('./controllers/AdministratorController')
 
-routes.get('/user/:id', UserController.show)
-routes.get('/allusers', UserController.index)
-routes.post('/user', UserController.store)
-routes.put('/user/:id', UserController.update)
-routes.delete('/user/:id', UserController.destroy)
+routes.get('/administrator/:id', AdministratorController.show)
+routes.get('/alladministrators', AdministratorController.index)
+routes.post('/administrator', AdministratorController.store)
+routes.put('/administrator/:id', AdministratorController.update)
+routes.delete('/administrator/:id', AdministratorController.destroy)
 
 module.exports = routes
