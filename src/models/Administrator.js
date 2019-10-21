@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const mongoosePaginate = require('mongoose-paginate')
 
 const AdministratorSchema = new mongoose.Schema({
     name:{
@@ -26,5 +27,7 @@ const AdministratorSchema = new mongoose.Schema({
         default: Date.now,
     },
 })
+
+AdministratorSchema.plugin(mongoosePaginate)
 
 mongoose.model("Administrator", AdministratorSchema)

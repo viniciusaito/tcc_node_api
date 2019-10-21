@@ -4,7 +4,8 @@ const Administrator = mongoose.model('Administrator')
 
 module.exports = {
     async index(req, res) {
-        const  administrator = await Administrator.find()
+        const { page = 1 } = req.query;
+        const  administrator = await Administrator.paginate({},{page, limit:10})
 
         return res.json(administrator)
     },

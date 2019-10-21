@@ -4,7 +4,8 @@ const User = mongoose.model('User')
 
 module.exports = {
     async index(req, res) {
-        const  user = await User.find()
+        const { page = 1 } = req.query;
+        const  user = await User.paginate({},{page, limit:10})
 
         return res.json(user)
     },

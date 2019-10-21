@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const mongoosePaginate = require('mongoose-paginate')
 
 const StationSchema = new mongoose.Schema({
     name:{
@@ -10,5 +11,7 @@ const StationSchema = new mongoose.Schema({
         required: true,
     },
 })
+
+StationSchema.plugin(mongoosePaginate)
 
 mongoose.model("Station", StationSchema)

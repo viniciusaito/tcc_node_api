@@ -4,7 +4,8 @@ const logStation = mongoose.model('logStation')
 
 module.exports = {
     async index(req, res) {
-        const  logstation = await logStation.find()
+        const { page = 1 } = req.query;
+        const  logstation = await logStation.paginate({},{page, limit:10})
 
         return res.json(logstation)
     },

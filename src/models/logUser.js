@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const mongoosePaginate = require('mongoose-paginate')
 
 const logUserSchema = new mongoose.Schema({
     adminId:{
@@ -14,5 +15,7 @@ const logUserSchema = new mongoose.Schema({
         default: Date.now,
     },
 })
+
+logUserSchema.plugin(mongoosePaginate)
 
 mongoose.model("logUser", logUserSchema)

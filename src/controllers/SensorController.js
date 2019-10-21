@@ -4,7 +4,8 @@ const Sensor = mongoose.model('Sensor')
 
 module.exports = {
     async index(req, res) {
-        const  sensor = await Sensor.find()
+        const { page = 1 } = req.query;
+        const  sensor = await Sensor.paginate({},{page, limit:10})
 
         return res.json(sensor)
     },

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const mongoosePaginate = require('mongoose-paginate')
 
 const SensorSchema = new mongoose.Schema({
     stationId:{
@@ -17,10 +18,12 @@ const SensorSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    log: {
-        type: Date,
-        default: Date.now,
+    geoLocation:{
+        type: String,
+        required: true,
     },
 })
+
+SensorSchema.plugin(mongoosePaginate)
 
 mongoose.model("Sensor", SensorSchema)
