@@ -38,7 +38,7 @@ routes.post('/station', StationController.store)
 routes.put('/station/:id', StationController.update)
 routes.delete('/station/:id', StationController.destroy)
 
-routes.get('/user/:id', UserController.show)
+routes.get('/user/:email/:password', UserController.show)
 routes.get('/allusers', UserController.index)
 routes.post('/user', UserController.store)
 routes.put('/user/:id', UserController.update)

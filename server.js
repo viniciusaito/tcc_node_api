@@ -1,6 +1,7 @@
 const express = require("express");
+const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
-const requireDir = require("require-dir")
+const requireDir = require("require-dir");
 const cors = require('cors');
 
 // Iniciar 
@@ -9,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 mongoose.connect( //user@password apos mongodb://
-    'mongodb://172.17.252.244:27017/tcc_node_api',
+    'mongodb://192.168.15.20:27017/tcc_node_api',
     { useNewUrlParser: true}
 );
 requireDir('./src/models')
