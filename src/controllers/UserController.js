@@ -18,7 +18,6 @@ module.exports = {
 
     async show(req, res) {
         var email = req.params.email
-        var password = req.params.password
         User.findOne({'email':email} ,function(err, user){
             if(err) throw err;
             if(email==''){

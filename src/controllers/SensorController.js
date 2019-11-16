@@ -17,6 +17,17 @@ module.exports = {
     },
 
     async show(req, res) {
+        var stationId = req.params.stationId
+        User.findOne({'stationId':stationId} ,function(err, user){
+            if(err) throw err;
+            if(stationId==''){
+                return done(null, false, {message: 'No sensors found'})
+            }
+            else return res.json(sensor)
+        })
+    },
+
+    async show(req, res) {
         const sensor = await Sensor.findById(req.params.id)
 
         return res.json(sensor)
