@@ -27,8 +27,6 @@ module.exports = {
         })
 
         //const user = await User.findById(req.params.id)
-
-        //return res.json(user)
     },
 
     async update(req, res) {

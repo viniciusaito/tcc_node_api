@@ -10,6 +10,10 @@ const logStationSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    action: {
+        type: String,
+        required: true,
+    },
     log: {
         type: Date,
         default: Date.now,
