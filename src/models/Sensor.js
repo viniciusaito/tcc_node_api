@@ -10,17 +10,9 @@ const SensorSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    datatype:{
-        type: String,
-        required: true
-    },
-    datavalue:{
-        type: String,
-        required: true,
-    },
     geoLocation:{
         type: String,
-        required: true,
+        required: true
     },
 })
 

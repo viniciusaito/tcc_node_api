@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 mongoose.connect( //user@password apos mongodb://
-    'mongodb://192.168.15.20:27017/tcc_node_api'
+    'mongodb://172.17.141.26:27017/tcc_node_api'
 );
 requireDir('./src/models')
 
